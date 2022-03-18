@@ -12,7 +12,6 @@ import {
 } from 'react-native';
 
 import {signIn} from '../actions/auth';
-// import Toast from 'react-native-toast-message';
 import {useDispatch} from 'react-redux';
 
 const SignIn = props => {
@@ -74,7 +73,7 @@ const SignIn = props => {
                 borderColor: 'black',
                 borderRadius: 7,
                 backgroundColor: 'white',
-                // margin: 20,
+
                 justifyContent: 'flex-start',
                 fontSize: 16,
                 color: 'grey',
@@ -93,7 +92,7 @@ const SignIn = props => {
               onChangeText={password => setPassword(password)}
               style={{
                 backgroundColor: 'white',
-                // margin: 20,
+
                 marginTop: 10,
                 borderWidth: 0.2,
                 borderRadius: 7,

@@ -7,11 +7,8 @@ import {
   TextInput,
   Dimensions,
 } from 'react-native';
-// import { TextInput } from 'react-native-paper';
-// import { Ionicons } from '@expo/vector-icons';
 import {useDispatch, useSelector} from 'react-redux';
 import {createPost} from '../actions/posts';
-// import { Montserrat_400Regular, Montserrat_600SemiBold, Montserrat_700Bold, useFonts } from '@expo-google-fonts/montserrat'
 
 const NewPost = props => {
   const dispatch = useDispatch();
@@ -26,24 +23,9 @@ const NewPost = props => {
     );
   };
 
-  // let [fontsLoaded, error] = useFonts({
-  //     Montserrat_400Regular,
-  //     Montserrat_600SemiBold,
-  //     Montserrat_700Bold
-  //   })
-
-  //   if (!fontsLoaded) {
-  //     return (
-  //       <View>
-  //         <Text>Loading</Text>
-  //       </View>
-  //     )
-  //   }
-
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        {/* <Ionicons onPress={() => props.navigation.navigate('Home')} name="arrow-back-circle-outline" size={32} color="black" /> */}
         <Text style={styles.mainHeading}>CREATE POSTS</Text>
         <Text></Text>
       </View>
@@ -57,7 +39,6 @@ const NewPost = props => {
             onChangeText={title => setTitle(title)}
             placeholder={'Title'}
             activeOutlineColor="grey"
-            // theme={{ fonts: { regular: { fontFamily: 'Roboto-Regular' } } }}
           />
         </View>
         <View style={styles.inputContainer}>

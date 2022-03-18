@@ -12,16 +12,6 @@ const Home = props => {
     dispatch(getPosts());
   };
 
-  const renderData = ({item}) => (
-    <View style={styles.postContainer}>
-      <View style={styles.titleContainer}>
-        <Text style={styles.post}>{item.id}.</Text>
-        <Text style={styles.postTitle}>{item.title.toUpperCase()}</Text>
-      </View>
-      <Text style={styles.postBody}>{item.body}</Text>
-    </View>
-  );
-
   useEffect(() => {
     getPostData();
   }, []);
@@ -43,7 +33,18 @@ const Home = props => {
           color="black"
         />
       </View>
-      <FlatList data={postData} renderItem={renderData} />
+      <FlatList
+        data={postData}
+        renderItem={({item}) => (
+          <View style={styles.postContainer}>
+            <View style={styles.titleContainer}>
+              <Text style={styles.post}>{item.id}.</Text>
+              <Text style={styles.postTitle}>{item.title}</Text>
+            </View>
+            <Text style={styles.postBody}>{item.body}</Text>
+          </View>
+        )}
+      />
     </View>
   );
 };
@@ -64,17 +65,13 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto-Regular',
   },
   postContainer: {
-    // backgroundColor: 'white',
     margin: 20,
-    // padding: 15,
     alignItems: 'flex-start',
     borderRadius: 15,
-    // elevation: 2,
   },
   titleContainer: {
     display: 'flex',
     flexDirection: 'row',
-    // marginBottom: 10,
   },
   post: {
     fontFamily: 'Roboto-Regular',
